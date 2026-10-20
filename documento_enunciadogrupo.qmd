@@ -1,0 +1,66 @@
+---
+title: "Trabajo 01 Grupo: Teoría de la Decisión bajo Incertidumbre - Enunciados"
+author: "Elena Cascales Toscano, Ana Castillo Arias, Pablo Jesus del Valle Alonso"
+date: "2026-10-23"
+format:
+  html:
+    embed-resources: true
+  typst: default
+---
+
+# Bloque 1: Problemas de Elena Cascales Toscano
+
+## Problema 1: Tabla de Decisión con Valores Inventados
+[El compañero/a 1 pegará aquí el enunciado de su matriz inventada y sus 5 preguntas V/F]
+
+## Problema 2: Caso Real
+[El compañero/a 1 pegará aquí el enunciado de su caso real y sus 5 preguntas V/F]
+
+---
+
+# Bloque 2: Problemas de Ana Castillo Arias
+
+## Problema 1: Tabla de Decisión con Valores Inventados
+
+Se plantea una situación de decisión bajo incertidumbre definida por la siguiente matriz de valores numéricos (ganancias/beneficios en miles de euros), compuesta por 3 alternativas ($d_1, d_2, d_3$) y 3 estados de la naturaleza ($e_1, e_2, e_3$):
+
+| Alternativas | Estado $e_1$ | Estado $e_2$ | Estado $e_3$ |
+| :--- | :---: | :---: | :---: |
+| **Alternativa $d_1$** | 12 | 5 | 18 |
+| **Alternativa $d_2$** | 8 | 15 | 10 |
+| **Alternativa $d_3$** | 20 | 2 | 6 |
+
+### Cuestionario de Autoevaluación (V/F)
+1. En situación favorable (beneficios), el criterio Pesimista (Wald) selecciona la alternativa $d_1$.
+2. En situación favorable (beneficios), el criterio Optimista selecciona la alternativa $d_2$.
+3. El criterio de Laplace bajo situación favorable otorga la misma valoración esperada a $d_1$ y $d_2$.
+4. En situación desfavorable (costes), el criterio Pesimista (Wald) elige la alternativa $d_2$.
+5. El criterio de Hurwicz ($\alpha = 0.6$) bajo beneficios indica que la mejor alternativa es exclusivamente $d_1$.
+
+---
+
+## Problema 2: Caso Real - Selección de Cultivo Agrícola
+
+Una empresa agrícola del valle del Guadalquivir debe decidir qué cultivo plantar para la próxima temporada ($A_1$: Trigo, $A_2$: Girasol, $A_3$: Maíz). La rentabilidad final (en miles de euros) dependerá de las condiciones meteorológicas durante el verano ($E_1$: Lluvioso, $E_2$: Normal, $E_3$: Seco).
+
+Las estimaciones de rendimiento económico son las siguientes:
+* **Trigo ($A_1$):** 40 mil € con clima lluvioso, 30 mil € con clima normal y 10 mil € con clima seco.
+* **Girasol ($A_2$):** 15 mil € con clima lluvioso, 35 mil € con clima normal y 25 mil € con clima seco.
+* **Maíz ($A_3$):** 50 mil € con clima lluvioso, 20 mil € con clima normal y 5 mil € con clima seco.
+
+### Cuestionario de Autoevaluación (V/F)
+1. El criterio Pesimista o de Wald recomienda cultivar Girasol ($A_2$).
+2. El criterio Optimista recomienda cultivar Trigo ($A_1$).
+3. Según el criterio de Hurwicz con coeficiente de optimismo $\alpha = 0.7$, la mejor opción es el Maíz ($A_3$).
+4. El criterio Minimax Regret (Savage) descarta completamente la opción del Girasol ($A_2$).
+5. El criterio de Laplace otorga la mayor utilidad esperada al Trigo ($A_1$).
+
+---
+
+# Bloque 3: Problemas de Pablo Jesus del Valle Alonso
+
+## Problema 1: Tabla de Decisión con Valores Inventados
+[El compañero/a 3 pegará aquí el enunciado de su matriz inventada y sus 5 preguntas V/F]
+
+## Problema 2: Caso Real
+[El compañero/a 3 pegará aquí el enunciado de su caso real y sus 5 preguntas V/F]
