@@ -1,0 +1,142 @@
+---
+title: "Trabajo 01 Grupo: Teoría de la Decisión bajo Incertidumbre - Soluciones"
+author: "Elena Cascales Toscano, Ana Castillo Arias, Pablo Jesus del Valle Alonso"
+date: "2026-10-23"
+format:
+  html:
+    embed-resources: true
+  typst: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+source("teoriadecision_funciones_incertidumbre.R")
+```
+
+# Bloque 1: Problemas de Elena Cascales Toscano
+
+## Problema 1: Tabla de Decisión con Valores Inventados
+
+
+
+## Problema 2: Caso Real
+
+
+
+---
+
+# Bloque 2: Problemas de Ana Castillo Arias
+
+## Problema 1: Tabla de Decisión con Valores Inventados
+
+Se plantea una situación de decisión bajo incertidumbre definida por la siguiente matriz de valores numéricos (ganancias/beneficios en miles de euros), compuesta por 3 alternativas ($d_1, d_2, d_3$) y 3 estados de la naturaleza ($e_1, e_2, e_3$):
+
+| Alternativas | Estado $e_1$ | Estado $e_2$ | Estado $e_3$ |
+| :--- | :---: | :---: | :---: |
+| **Alternativa $d_1$** | 12 | 5 | 18 |
+| **Alternativa $d_2$** | 8 | 15 | 10 |
+| **Alternativa $d_3$** | 20 | 2 | 6 |
+
+### Resolución en R (Métodos Individuales)
+
+```{r}
+# Creación de la matriz de decisión
+m1 <- matrix(c(12, 5, 18,
+                8, 15, 10,
+               20,  2,  6), nrow = 3, byrow = TRUE)
+tabla1 <- crea.tablaX(m1, numalternativas = 3, numestados = 3)
+rownames(tabla1) <- c("d1", "d2", "d3")
+colnames(tabla1) <- c("e1", "e2", "e3")
+
+# Tabla de decisión
+tabla1
+
+# Resultados Favorable (Beneficios)
+criterio.Wald(tabla1, favorable = TRUE)
+criterio.Optimista(tabla1, favorable = TRUE)
+criterio.Hurwicz(tabla1, alfa = 0.6, favorable = TRUE)
+criterio.Laplace(tabla1, favorable = TRUE)
+criterio.Savage(tabla1, favorable = TRUE)
+
+# Resultados Desfavorable (Costes)
+criterio.Wald(tabla1, favorable = FALSE)
+criterio.Optimista(tabla1, favorable = FALSE)
+criterio.Hurwicz(tabla1, alfa = 0.6, favorable = FALSE)
+criterio.Laplace(tabla1, favorable = FALSE)
+criterio.Savage(tabla1, favorable = FALSE)
+```
+
+### Soluciones del Cuestionario V/F (Problema 1)
+
+1. **FALSO:** En situación favorable (beneficios), el criterio Pesimista (Wald) busca el máximo de los valores mínimos de cada alternativa ($\min(d_1)=5$, $\min(d_2)=8$, $\min(d_3)=2$). El mayor valor mínimo es 8, por lo que selecciona la alternativa **$d_2$** (no $d_1$).
+
+2. **FALSO:** El criterio Optimista bajo beneficios busca el máximo absoluto de la tabla ($\max(d_1)=18$, $\max(d_2)=15$, $\max(d_3)=20$). El beneficio máximo es 20, por lo que selecciona la alternativa **$d_3$** (no $d_2$).
+
+3. **VERDADERO:** El criterio de Laplace calcula el valor medio de cada alternativa:
+   * Promedio de $d_1$: $(12 + 5 + 18) / 3 = 11.67$
+   * Promedio de $d_2$: $(8 + 15 + 10) / 3 = 11.67$  
+   Ambas obtienen exactamente la misma valoración esperada ($11.67$).
+
+4. **VERDADERO:** En situación desfavorable (costes), el criterio Pesimista busca minimizar la pérdida máxima ($\max(d_1)=18$, $\max(d_2)=15$, $\max(d_3)=20$). El menor coste máximo es 15, correspondiente a la alternativa **$d_2$**.
+
+5. **FALSO:** Para $\alpha = 0.6$, el valor de Hurwicz se calcula como $0.6 \times \text{Máx} + 0.4 \times \text{Mín}$:
+   * $H(d_1) = 0.6(18) + 0.4(5) = 12.8$
+   * $H(d_3) = 0.6(20) + 0.4(2) = 12.8$  
+   No indica exclusivamente a $d_1$, ya que se produce un empate con la alternativa $d_3$.
+
+---
+
+## Problema 2: Caso Real - Selección de Cultivo Agrícola
+
+Una empresa agrícola del valle del Guadalquivir debe decidir qué cultivo plantar para la próxima temporada ($A_1$: Trigo, $A_2$: Girasol, $A_3$: Maíz). La rentabilidad final (en miles de euros) dependerá de las condiciones meteorológicas durante el verano ($E_1$: Lluvioso, $E_2$: Normal, $E_3$: Seco).
+
+Las estimaciones de rendimiento económico son las siguientes:
+- **Trigo ($A_1$):** 40 mil € con clima lluvioso, 30 mil € con clima normal y 10 mil € con clima seco.
+- **Girasol ($A_2$):** 15 mil € con clima lluvioso, 35 mil € con clima normal y 25 mil € con clima seco.
+- **Maíz ($A_3$):** 50 mil € con clima lluvioso, 20 mil € con clima normal y 5 mil € con clima seco.
+
+### Resolución en R (Tabla Resumen Única)
+
+```{r}
+# Matriz del caso real
+m2 <- matrix(c(40, 30, 10,
+               15, 35, 25,
+               50, 20,  5), nrow = 3, byrow = TRUE)
+tabla2 <- crea.tablaX(m2, numalternativas = 3, numestados = 3)
+rownames(tabla2) <- c("Trigo (A1)", "Girasol (A2)", "Maíz (A3)")
+colnames(tabla2) <- c("Lluvioso (E1)", "Normal (E2)", "Seco (E3)")
+
+# Tabla resumen con todos los criterios
+criterio.Todos(tabla2, alfa = 0.7, favorable = TRUE)
+```
+
+### Soluciones del Cuestionario V/F (Problema 2)
+
+1. **VERDADERO:** El criterio Pesimista (Wald) analiza el rendimiento mínimo garantizado de cada cultivo ($A_1=10$, $A_2=15$, $A_3=5$). El mayor mínimo asegurado es 15, correspondiente al **Girasol ($A_2$)**.
+
+2. **FALSO:** El criterio Optimista selecciona la opción con el beneficio máximo absoluto, que es el **Maíz ($A_3$)** con 50 mil €, y no el Trigo ($A_1$).
+
+3. **VERDADERO:** Con un coeficiente de optimismo $\alpha = 0.7$:
+   * $H(A_1) = 0.7(40) + 0.3(10) = 31$
+   * $H(A_2) = 0.7(35) + 0.3(15) = 29$
+   * $H(A_3) = 0.7(50) + 0.3(5) = 36.5$  
+   La opción ganadora es el **Maíz ($A_3$)** con $36.5$.
+
+4. **FALSO:** El criterio de Minimax Regret (Savage) evalúa la matriz de arrepentimiento de todas las alternativas. Aunque el Girasol no resulte ser la opción óptima, no se descarta sin realizar el cálculo de la penalización máxima.
+
+5. **VERDADERO:** Calculando la utilidad esperada según Laplace (promedio equiprobable):
+   * Promedio $A_1$ (Trigo): $(40 + 30 + 10) / 3 = 26.67$
+   * Promedio $A_2$ (Girasol): $(15 + 35 + 25) / 3 = 25.00$
+   * Promedio $A_3$ (Maíz): $(50 + 20 + 5) / 3 = 25.00$  
+   El **Trigo ($A_1$)** obtiene la mayor utilidad esperada ($26.67$).
+
+---
+
+# Bloque 3: Problemas de Pablo Jesus del Valle Alonso
+
+## Problema 1: Tabla de Decisión con Valores Inventados
+
+
+
+## Problema 2: Caso Real
+
