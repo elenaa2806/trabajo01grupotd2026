@@ -2350,12 +2350,106 @@ window.Quarto = {
 <h1>Bloque 1: Problemas de Elena Cascales Toscano</h1>
 <section id="problema-1-tabla-de-decisión-con-valores-inventados" class="level2">
 <h2 class="anchored" data-anchor-id="problema-1-tabla-de-decisión-con-valores-inventados">Problema 1: Tabla de Decisión con Valores Inventados</h2>
-<p>[El compañero/a 1 pegará aquí el enunciado de su matriz inventada y sus 5 preguntas V/F]</p>
+<p>Se considera la siguiente tabla de decisión, con 4 alternativas (<span class="math inline">\(d_1, d_2, d_3, d_4\)</span>) y 3 estados de la naturaleza (<span class="math inline">\(e_1, e_2, e_3\)</span>):</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;"><span class="math inline">\(e_1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(e_2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(e_3\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(d_1\)</span></td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">-2</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(d_2\)</span></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(d_3\)</span></td>
+<td style="text-align: center;">-4</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(d_4\)</span></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">9</td>
+</tr>
+</tbody>
+</table>
+<p>Resuelva el problema con cada uno de los métodos de decisión bajo incertidumbre (Wald, Optimista, Hurwicz con <span class="math inline">\(\alpha = 0.3\)</span>, Savage, Laplace y Punto Ideal), tanto en situación favorable (beneficios) como desfavorable (costes), e indique cuáles de las siguientes afirmaciones son verdaderas:</p>
+<ol type="a">
+<li><p>Con el criterio de Wald en situación favorable, la alternativa óptima es <span class="math inline">\(d_2\)</span>.</p></li>
+<li><p>Con el criterio Optimista en situación favorable, la alternativa óptima es <span class="math inline">\(d_4\)</span>.</p></li>
+<li><p>El criterio de Laplace elige la misma alternativa en situación favorable y en situación desfavorable.</p></li>
+<li><p>Con el criterio de Hurwicz (<span class="math inline">\(\alpha = 0.3\)</span>) en situación desfavorable, la alternativa óptima es <span class="math inline">\(d_2\)</span>.</p></li>
+<li><p>Con el criterio de Savage en situación favorable, el valor óptimo (mínimo de los máximos arrepentimientos) es 6.</p></li>
+</ol>
 </section>
-<section id="problema-2-caso-real" class="level2">
-<h2 class="anchored" data-anchor-id="problema-2-caso-real">Problema 2: Caso Real</h2>
-<p>[El compañero/a 1 pegará aquí el enunciado de su caso real y sus 5 preguntas V/F]</p>
-<hr>
+<section id="problema-2-caso-real---elección-de-técnica-de-estudio" class="level2">
+<h2 class="anchored" data-anchor-id="problema-2-caso-real---elección-de-técnica-de-estudio">Problema 2: Caso Real - Elección de técnica de estudio</h2>
+<p>Una estudiante de cuarto curso del Grado en Estadística tiene que preparar un examen, pero no sabe si será <strong>teórico</strong>, <strong>práctico</strong> (de problemas) o <strong>mixto</strong>. Está decidiendo qué técnica de estudio utilizar entre las siguientes: estudiar con ayuda de la IA, estudiar escribiendo (esquemas y apuntes a mano), leyendo y subrayando, haciendo ejercicios, o basándose en exámenes de años anteriores.</p>
+<p>Según su experiencia, estima el número de <strong>horas de estudio necesarias para aprobar</strong> con cada técnica según el tipo de examen:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">Teórico</th>
+<th style="text-align: center;">Práctico</th>
+<th style="text-align: center;">Mixto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Estudiar con la IA</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">22</td>
+</tr>
+<tr class="even">
+<td>Escribiendo</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">26</td>
+</tr>
+<tr class="odd">
+<td>Leyendo y subrayando</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">30</td>
+</tr>
+<tr class="even">
+<td>Haciendo ejercicios</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="odd">
+<td>Exámenes anteriores</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">16</td>
+</tr>
+</tbody>
+</table>
+<p>Teniendo en cuenta que la estudiante quiere <strong>minimizar</strong> el número de horas de estudio, resuelva el problema con todos los métodos de decisión bajo incertidumbre (con <span class="math inline">\(\alpha = 0.3\)</span> en Hurwicz) e indique cuáles de las siguientes afirmaciones son verdaderas:</p>
+<ol type="a">
+<li><p>Según el criterio de Wald, la técnica óptima es estudiar con la IA.</p></li>
+<li><p>Según el criterio Optimista, la técnica óptima es basarse en exámenes anteriores.</p></li>
+<li><p>Según el criterio de Laplace, la técnica óptima necesita de media menos de 21 horas de estudio.</p></li>
+<li><p>La técnica “Leyendo y subrayando” no es óptima según ningún criterio.</p></li>
+<li><h2 id="según-el-criterio-de-hurwicz-alpha-0.3-la-técnica-óptima-es-basarse-en-exámenes-de-años-anteriores." class="anchored">Según el criterio de Hurwicz (<span class="math inline">\(\alpha = 0.3\)</span>), la técnica óptima es basarse en exámenes de años anteriores.</h2></li>
+</ol>
 </section>
 </section>
 <section id="bloque-2-problemas-de-ana-castillo-arias" class="level1">
@@ -2428,8 +2522,8 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="problema-1-tabla-de-decisión-con-valores-inventados-2">Problema 1: Tabla de Decisión con Valores Inventados</h2>
 <p>[El compañero/a 3 pegará aquí el enunciado de su matriz inventada y sus 5 preguntas V/F]</p>
 </section>
-<section id="problema-2-caso-real-1" class="level2">
-<h2 class="anchored" data-anchor-id="problema-2-caso-real-1">Problema 2: Caso Real</h2>
+<section id="problema-2-caso-real" class="level2">
+<h2 class="anchored" data-anchor-id="problema-2-caso-real">Problema 2: Caso Real</h2>
 <p>[El compañero/a 3 pegará aquí el enunciado de su caso real y sus 5 preguntas V/F]</p>
 </section>
 </section>
