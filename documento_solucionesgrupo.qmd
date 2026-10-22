@@ -311,7 +311,214 @@ criterio.Todos(tabla2, alfa = 0.7, favorable = TRUE)
 
 ## Problema 1: Tabla de Decisión con Valores Inventados
 
+### Ejercicio 1:
+
+Se considera la siguiente tabla de decisión, con 4 alternativas ($d_1$, $d_2$, $d_3$, $d_4$) y 3 estados de naturaleza ($e_1$, $e_2$, $e_3$, $e_4$)
+
+| Alternativas | e1  | e2  | e3  |
+|--------------|-----|-----|-----|
+| d1           | 50  | 30  | 10  |
+| d2           | 35  | 25  | 15  |
+| d3           | 60  | 20  | -10 |
+| d4           | 20  | 18  | 12  |
+
+```{r}
+# 1. Definición de la matriz de decisión
+tabla1 = crea.tablaX(c(
+                          50, 30,  10,
+                          35, 25,  15,
+                          60, 20, -10,
+                          20, 18,  12
+                        ),
+                     numalternativas = 4, numestados = 3)
+rownames(tabla1) = c("d1", "d2", "d3", "d4")
+colnames(tabla1) = c("e1", "e2", "e3")
+
+cat("MATRIZ DE DECISIÓN INICIAL\n")
+print(tabla1)
+
+# 2. Situación favorable (Maximización de Beneficios)
+
+# A. Criterio de Laplace
+laplace_fav = criterio.Laplace(tabla1, favorable = TRUE)
+print(laplace_fav)
+
+# B. Criterio Optimista / Maximax
+maximax_fav = criterio.Optimista(tabla1, favorable = TRUE)
+print(maximax_fav)
+
+# C. Criterio Pesimista / Maximin / Wald
+maximin_fav = criterio.Wald(tabla1, favorable = TRUE)
+print(maximin_fav)
+
+# D. Criterio de Hurwicz (Coeficiente de optimismo alpha = 0.5)
+hurwicz_fav = criterio.Hurwicz(tabla1, alfa = 0.5, favorable = TRUE)
+print(hurwicz_fav)
+
+# E. Criterio del Punto Ideal
+puntoideal_fav = criterio.PuntoIdeal(tabla1, favorable = TRUE)
+print(puntoideal_fav)
+
+# F. Criterio de Savage
+savage_fav = criterio.Savage(tabla1, favorable = TRUE)
+print(savage_fav)
+
+
+# 3. SITUACIÓN DESFAVORABLE (Minimización de Costes / Pérdidas)
+
+
+# A. Criterio de Laplace
+laplace_desfav = criterio.Laplace(tabla1, favorable = FALSE)
+print(laplace_desfav)
+
+# B. Criterio Minimax
+minimax_desfav = criterio.Optimista(tabla1, favorable = FALSE)
+print(minimax_desfav)
+
+# C. Criterio Pesimista / Minimin / Wald
+minimin_desfav = criterio.Wald(tabla1, favorable = FALSE)
+print(minimin_desfav)
+
+# D. Criterio de Hurwicz (Coeficiente de optimismo alpha = 0.5)
+hurwicz_desfav = criterio.Hurwicz(tabla1, alfa = 0.5, favorable = FALSE)
+print(hurwicz_desfav)
+
+# E. Criterio del Punto Ideal
+puntoideal_desfav = criterio.PuntoIdeal(tabla1, favorable = FALSE)
+print(puntoideal_desfav)
+
+# F. Criterio de Savage
+savage_desfav = criterio.Savage(tabla1, favorable = FALSE)
+print(savage_desfav)
+```
+
+#### Cuestionario de Preguntas (Verdadero / Falso)
+
+Indica si las siguientes afirmaciones son verdaderas (V) o falsas (F):
+
+1.  En la situación favorable, según el criterio optimista (Maximax), la alternativa elegida es ($d_3$) con un beneficio de 60.
+
+Verdadero:
+
+```{r}
+print(maximax_fav$AlternativaOptima)
+```
+
+2.  En la situación favorable, el criterio de Wald selecciona ($d_1$) por ser la más equilibrada.
+
+Falso:
+
+```{r}
+print(maximin_fav$AlternativaOptima)
+```
+
+3.  En la situación desfavorable (costes), el criterio de Laplace recomienda ($d_4$) con un coste medio de 26.000 €.
+
+Falso (diferente coste medio aunque la elegida sea $d_4$):
+
+```{r}
+print(c(laplace_desfav$AlternativaOptima,laplace_desfav$ValorOptimo))
+```
+
+4.  En el criterio de Hurwicz para la situación favorable ($\alpha = 0,5$), ($d_2$) obtiene el valor más alto con 34.
+
+Falso:
+
+```{r}
+print(c(hurwicz_fav$AlternativaOptima,hurwicz_fav$ValorOptimo))
+```
+
+5.  En la situación desfavorable, el criterio de Wald selecciona ($d_3$).
+
+Falso:
+
+```{r}
+print(minimin_desfav$AlternativaOptima)
+```
 
 
 ## Problema 2: Caso Real
+### Ejercicio 2:
 
+Una bodega de vino de Jerez de la Frontera está considerando ampliar sus instalaciones para atender a un mayor volumen en los mercados internacionales. El gerente debe decidir qué capacidad de producción y crianza implantar, pero desconoce como evolucionará la demanda en el próximo año.
+
+Tiene tres alternativas:
+
+- $d_1$: Mantener una producción artesanal y limitada, con poca inversión.
+
+- $d_2$: Instalar una capacidad de crianza media, con una inversión moderada.
+
+- $d_3$: Construir una gran bodega de crianza a gran escala, con una inversión elevada.
+
+Los beneficios netos anuales estimados, expresados en miles de euros, dependen de la demanda futura del vino:
+
+| Alternativas | Demanda baja, e1 | Demanda media, e2 | Demanda alta, e3 |
+|--------------|------------------|-------------------|------------------|
+| d1           | 18               | 22                | 24               |
+| d2           | 10               | 28                | 38               |
+| d3           | -8               | 20                | 55               |
+
+El gerente no dispone de información suficiente para asignar probabilidades a los distintos escenarios. Por ello, quiere estudiar qué alternativa le conviene mediante los criterios de decisión bajo incertidumbre.
+
+```{r}
+# 1. Definición de la matriz de decisión
+tabla2 = crea.tablaX(c(
+  18, 22, 24,
+  10, 28, 38,
+  -8, 20, 55
+),numalternativas = 3, numestados = 3)
+
+rownames(tabla2) = c("Producción Artesanal (d1)", "Crianza Media (d2)", "Gran Bodega (d3)")
+colnames(tabla2) = c("Demanda Baja (e1)", "Demanda Media (e2)", "Demanda Alta (e3)")
+
+cat("MATRIZ DE DECISIÓN INICIAL\n")
+print(tabla2)
+
+# Tabla resumen con todos los criterios
+solucion = criterio.Todos(tabla2, alfa = 0.7, favorable = TRUE)
+print(solucion)
+```
+#### Cuestionario de Preguntas (Verdadero / Falso)
+
+Indica si las siguientes afirmaciones son verdaderas (V) o falsas (F):
+
+1.  Según el criterio pesimista de Wald, el gerente de la bodega debe elegir mantener una producción artesanal y limitada ($d_1$).
+
+Verdadero:
+
+```{r}
+print(solucion$Wald[4])
+```
+
+2.  El criterio optimista recomienda la capacidad media ($d_2$) porque ofrece la mayor rentabilidad potencial ante la demanda alta de vino de Jerez.
+
+Falso:
+
+```{r}
+print(solucion$Optimista[4])
+```
+
+
+3. Aplicando el criterio de Laplace, la alternativa seleccionada es la producción artesanal ($d_1$) con un valor medio menor de 21,33 miles..
+
+Falso:
+
+```{r}
+print(c(solucion$Laplace[4],solucion$Optimista[1]))
+```
+
+4.  El criterio de Savage y el de Laplace coinciden en recomendar la misma alternativa ($d_2$, capacidad media).
+
+Verdadero:
+
+```{r}
+print(c(solucion$Savage[4],solucion$Laplace[4]))
+```
+
+5. En el criterio de Hurwicz con $\alpha = 0{,}5$, la opción menos ventajosa para la bodega es la capacidad media ($d_2$).
+
+Falso:
+
+```{r}
+print(solucion$Hurwicz)
+```
