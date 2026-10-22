@@ -152,12 +152,12 @@ El gerente no dispone de información suficiente para asignar probabilidades a l
 
 Indica si las siguientes afirmaciones son verdaderas (V) o falsas (F):
 
-1.  Según el criterio pesimista de Wald en situación favorable, el gerente de la bodega debe elegir mantener una producción artesanal y limitada ($d_1$).
+1.  Según el criterio pesimista de Wald, el gerente de la bodega debe elegir mantener una producción artesanal y limitada ($d_1$).
 
-2.  El criterio optimista en situación favorable recomienda la capacidad media ($d_2$) porque ofrece la mayor rentabilidad potencial ante la demanda alta de vino de Jerez.
+2.  El criterio optimista recomienda la capacidad media ($d_2$) porque ofrece la mayor rentabilidad potencial ante la demanda alta de vino de Jerez.
 
-3. Aplicando el criterio de Laplace para costes, la alternativa seleccionada es la producción artesanal ($d_1$) con un valor medio menor de 21,33
+3. Aplicando el criterio de Laplace, la alternativa seleccionada es la producción artesanal ($d_1$) con un valor medio menor de 21,33
 
-4.  El criterio de Savage y el de Laplace favorables coinciden en recomendar la misma alternativa ($d_2$, capacidad media).
+4.  El criterio de Savage y el de Laplace coinciden en recomendar la misma alternativa ($d_2$, capacidad media).
 
-5. En el criterio de Hurwicz para costes con $\alpha$ = 0,5, la opción menos ventajosa para la bodega es la capacidad media ($d_2$).
+5. En el criterio de Hurwicz con $\alpha$ = 0,5, la opción menos ventajosa para la bodega es la capacidad media ($d_2$).
