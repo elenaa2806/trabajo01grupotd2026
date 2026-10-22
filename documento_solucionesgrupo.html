@@ -3556,7 +3556,7 @@ El <strong>Trigo (<span class="math inline">\(A_1\)</span>)</strong> obtiene la 
 <h2 class="anchored" data-anchor-id="problema-1-tabla-de-decisión-con-valores-inventados-2">Problema 1: Tabla de Decisión con Valores Inventados</h2>
 <section id="ejercicio-1" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1:</h3>
-<p>Se considera la siguiente tabla de decisión, con 4 alternativas (<span class="math inline">\(d_1\)</span>, <span class="math inline">\(d_2\)</span>, <span class="math inline">\(d_3\)</span>, <span class="math inline">\(d_4\)</span>) y 3 estados de naturaleza (<span class="math inline">\(e_1\)</span>, <span class="math inline">\(e_2\)</span>, <span class="math inline">\(e_3\)</span>, <span class="math inline">\(e_4\)</span>)</p>
+<p>Se considera la siguiente tabla de decisión, con 4 alternativas (<span class="math inline">\(d_1\)</span>, <span class="math inline">\(d_2\)</span>, <span class="math inline">\(d_3\)</span>, <span class="math inline">\(d_4\)</span>) y 3 estados de naturaleza (<span class="math inline">\(e_1\)</span>, <span class="math inline">\(e_2\)</span>, <span class="math inline">\(e_3\)</span>)</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -3648,8 +3648,8 @@ d1
  1 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># B. Criterio Optimista / Maximax</span></span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>maximax_fav <span class="ot">=</span> <span class="fu">criterio.Optimista</span>(tabla1, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(maximax_fav)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>optimista_fav <span class="ot">=</span> <span class="fu">criterio.Optimista</span>(tabla1, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(optimista_fav)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$criterio
 [1] &quot;Optimista&quot;
@@ -3676,8 +3676,8 @@ d3
  3 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># C. Criterio Pesimista / Maximin / Wald</span></span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>maximin_fav <span class="ot">=</span> <span class="fu">criterio.Wald</span>(tabla1, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(maximin_fav)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>wald_fav <span class="ot">=</span> <span class="fu">criterio.Wald</span>(tabla1, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(wald_fav)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$criterio
 [1] &quot;Wald&quot;
@@ -3836,9 +3836,9 @@ $AlternativaOptima
 d4 
  4 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># B. Criterio Minimax</span></span>
-<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>minimax_desfav <span class="ot">=</span> <span class="fu">criterio.Optimista</span>(tabla1, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(minimax_desfav)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># B. Criterio Optimista</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>optimista_desfav <span class="ot">=</span> <span class="fu">criterio.Optimista</span>(tabla1, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(optimista_desfav)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$criterio
 [1] &quot;Optimista&quot;
@@ -3865,8 +3865,8 @@ d3
  3 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co"># C. Criterio Pesimista / Minimin / Wald</span></span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>minimin_desfav <span class="ot">=</span> <span class="fu">criterio.Wald</span>(tabla1, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(minimin_desfav)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>wald_desfav <span class="ot">=</span> <span class="fu">criterio.Wald</span>(tabla1, <span class="at">favorable =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(wald_desfav)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$criterio
 [1] &quot;Wald&quot;
@@ -4003,7 +4003,7 @@ d4
 </ol>
 <p>Verdadero:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(maximax_fav<span class="sc">$</span>AlternativaOptima)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(optimista_fav<span class="sc">$</span>AlternativaOptima)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>d3 
  3 </code></pre>
@@ -4014,14 +4014,14 @@ d4
 </ol>
 <p>Falso:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(maximin_fav<span class="sc">$</span>AlternativaOptima)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(wald_fav<span class="sc">$</span>AlternativaOptima)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>d2 
  2 </code></pre>
 </div>
 </div>
 <ol start="3" type="1">
-<li>En la situación desfavorable (costes), el criterio de Laplace recomienda (<span class="math inline">\(d_4\)</span>) con un coste medio de 26.000 €.</li>
+<li>En la situación desfavorable (costes), el criterio de Laplace recomienda (<span class="math inline">\(d_4\)</span>) con un coste medio de 26.</li>
 </ol>
 <p>Falso (diferente coste medio aunque la elegida sea <span class="math inline">\(d_4\)</span>):</p>
 <div class="cell">
@@ -4047,7 +4047,7 @@ d4
 </ol>
 <p>Falso:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(minimin_desfav<span class="sc">$</span>AlternativaOptima)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(wald_desfav<span class="sc">$</span>AlternativaOptima)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>d4 
  4 </code></pre>
@@ -4132,7 +4132,7 @@ Crianza Media (d2)                       38
 Gran Bodega (d3)                         55</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla resumen con todos los criterios</span></span>
-<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a>solucion <span class="ot">=</span> <span class="fu">criterio.Todos</span>(tabla2, <span class="at">alfa =</span> <span class="fl">0.7</span>, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a>solucion <span class="ot">=</span> <span class="fu">criterio.Todos</span>(tabla2, <span class="at">alfa =</span> <span class="fl">0.5</span>, <span class="at">favorable =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(solucion)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                          Demanda Baja (e1) Demanda Media (e2)
@@ -4145,21 +4145,21 @@ Producción Artesanal (d1)                24                        18
 Crianza Media (d2)                       38                        10
 Gran Bodega (d3)                         55                        -8
 iAlt.Opt (fav.)                          -- Producción Artesanal (d1)
-                                 Optimista          Hurwicz             Savage
-Producción Artesanal (d1)               24             22.2                 31
-Crianza Media (d2)                      38             29.6                 17
-Gran Bodega (d3)                        55             36.1                 26
-iAlt.Opt (fav.)           Gran Bodega (d3) Gran Bodega (d3) Crianza Media (d2)
-                                     Laplace        Punto Ideal
-Producción Artesanal (d1)              21.33              31.58
-Crianza Media (d2)                     25.33              18.79
-Gran Bodega (d3)                       22.33              27.20
+                                 Optimista            Hurwicz
+Producción Artesanal (d1)               24               21.0
+Crianza Media (d2)                      38               24.0
+Gran Bodega (d3)                        55               23.5
+iAlt.Opt (fav.)           Gran Bodega (d3) Crianza Media (d2)
+                                      Savage            Laplace
+Producción Artesanal (d1)                 31              21.33
+Crianza Media (d2)                        17              25.33
+Gran Bodega (d3)                          26              22.33
 iAlt.Opt (fav.)           Crianza Media (d2) Crianza Media (d2)
-                                Veces Optima
-Producción Artesanal (d1)                  1
-Crianza Media (d2)                         3
-Gran Bodega (d3)                           2
-iAlt.Opt (fav.)           Crianza Media (d2)</code></pre>
+                                 Punto Ideal       Veces Optima
+Producción Artesanal (d1)              31.58                  1
+Crianza Media (d2)                     18.79                  4
+Gran Bodega (d3)                       27.20                  1
+iAlt.Opt (fav.)           Crianza Media (d2) Crianza Media (d2)</code></pre>
 </div>
 </div>
 <section id="cuestionario-de-preguntas-verdadero-falso-1" class="level4">
@@ -4186,13 +4186,13 @@ iAlt.Opt (fav.)           Crianza Media (d2)</code></pre>
 </div>
 </div>
 <ol start="3" type="1">
-<li>Aplicando el criterio de Laplace, la alternativa seleccionada es la producción artesanal (<span class="math inline">\(d_1\)</span>) con un valor medio menor de 21,33 miles..</li>
+<li>Aplicando el criterio de Laplace, la alternativa seleccionada es la producción artesanal (<span class="math inline">\(d_1\)</span>) con un valor de 21,33.</li>
 </ol>
-<p>Falso:</p>
+<p>Falso, se selecciona (<span class="math inline">\(d_2\)</span>):</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(solucion<span class="sc">$</span>Laplace[<span class="dv">4</span>],solucion<span class="sc">$</span>Optimista[<span class="dv">1</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(solucion<span class="sc">$</span>Laplace[<span class="dv">4</span>],solucion<span class="sc">$</span>Laplace[<span class="dv">2</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;Crianza Media (d2)&quot; &quot;24&quot;                </code></pre>
+<pre><code>[1] &quot;Crianza Media (d2)&quot; &quot;25.33&quot;             </code></pre>
 </div>
 </div>
 <ol start="4" type="1">
@@ -4208,11 +4208,12 @@ iAlt.Opt (fav.)           Crianza Media (d2)</code></pre>
 <ol start="5" type="1">
 <li>En el criterio de Hurwicz con <span class="math inline">\(\alpha = 0{,}5\)</span>, la opción menos ventajosa para la bodega es la capacidad media (<span class="math inline">\(d_2\)</span>).</li>
 </ol>
-<p>Falso:</p>
+<p>Falso, (<span class="math inline">\(d_2\)</span>) es la opción más ventajosa:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(solucion<span class="sc">$</span>Hurwicz)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;22.2&quot;             &quot;29.6&quot;             &quot;36.1&quot;             &quot;Gran Bodega (d3)&quot;</code></pre>
+<pre><code>[1] &quot;21.0&quot;               &quot;24.0&quot;               &quot;23.5&quot;              
+[4] &quot;Crianza Media (d2)&quot;</code></pre>
 </div>
 </div>
 </section>
