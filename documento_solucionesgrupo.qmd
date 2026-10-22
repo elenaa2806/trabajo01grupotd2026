@@ -231,13 +231,14 @@ criterio.Optimista(tabla1, favorable = TRUE)
 criterio.Hurwicz(tabla1, alfa = 0.6, favorable = TRUE)
 criterio.Laplace(tabla1, favorable = TRUE)
 criterio.Savage(tabla1, favorable = TRUE)
-
+criterio.PuntoIdeal(tabla1, favorable = TRUE)
 # Resultados Desfavorable (Costes)
 criterio.Wald(tabla1, favorable = FALSE)
 criterio.Optimista(tabla1, favorable = FALSE)
 criterio.Hurwicz(tabla1, alfa = 0.6, favorable = FALSE)
 criterio.Laplace(tabla1, favorable = FALSE)
 criterio.Savage(tabla1, favorable = FALSE)
+criterio.PuntoIdeal(tabla1, favorable = FALSE)
 ```
 
 ### Soluciones del Cuestionario V/F (Problema 1)
