@@ -102,7 +102,62 @@ Las estimaciones de rendimiento económico son las siguientes:
 # Bloque 3: Problemas de Pablo Jesus del Valle Alonso
 
 ## Problema 1: Tabla de Decisión con Valores Inventados
-[El compañero/a 3 pegará aquí el enunciado de su matriz inventada y sus 5 preguntas V/F]
+
+Se considera la siguiente tabla de decisión, con 4 alternativas ($d_1$, $d_2$, $d_3$, $d_4$) y 3 estados de naturaleza ($e_1$, $e_2$, $e_3$, $e_4$)
+
+| Alternativas | e1  | e2  | e3  |
+|--------------|-----|-----|-----|
+| d1           | 50  | 30  | 10  |
+| d2           | 35  | 25  | 15  |
+| d3           | 60  | 20  | -10 |
+| d4           | 20  | 18  | 12  |
+
+#### Cuestionario de Preguntas (Verdadero / Falso)
+
+Indica si las siguientes afirmaciones son verdaderas (V) o falsas (F):
+
+1.  En la situación favorable, según el criterio optimista (Maximax), la alternativa elegida es ($d_3$) con un beneficio de 60.
+
+2.  En la situación favorable, el criterio de Wald selecciona ($d_1$) por ser la más equilibrada.
+
+3.  En la situación desfavorable (costes), el criterio de Laplace recomienda ($d_4$) con un coste medio de 26.000 €.
+
+4.  En el criterio de Hurwicz para la situación favorable ($\alpha = 0,5$), ($d_2$) obtiene el valor más alto con 34.
+
+5.  En la situación desfavorable, el criterio de Wald selecciona ($d_3$).
 
 ## Problema 2: Caso Real
-[El compañero/a 3 pegará aquí el enunciado de su caso real y sus 5 preguntas V/F]
+
+Una bodega de vino de Jerez de la Frontera está considerando ampliar sus instalaciones para atender a un mayor volumen en los mercados internacionales. El gerente debe decidir qué capacidad de producción y crianza implantar, pero desconoce como evolucionará la demanda en el próximo año.
+
+Tiene tres alternativas:
+
+- $d_1$: Mantener una producción artesanal y limitada, con poca inversión.
+
+- $d_2$: Instalar una capacidad de crianza media, con una inversión moderada.
+
+- $d_3$: Construir una gran bodega de crianza a gran escala, con una inversión elevada.
+
+Los beneficios netos anuales estimados, expresados en miles de euros, dependen de la demanda futura del vino:
+
+| Alternativas | Demanda baja, e1 | Demanda media, e2 | Demanda alta, e3 |
+|--------------|------------------|-------------------|------------------|
+| d1           | 18               | 22                | 24               |
+| d2           | 10               | 28                | 38               |
+| d3           | -8               | 20                | 55               |
+
+El gerente no dispone de información suficiente para asignar probabilidades a los distintos escenarios. Por ello, quiere estudiar qué alternativa le conviene mediante los criterios de decisión bajo incertidumbre.
+
+#### Cuestionario de Preguntas (Verdadero / Falso)
+
+Indica si las siguientes afirmaciones son verdaderas (V) o falsas (F):
+
+1.  Según el criterio pesimista de Wald en situación favorable, el gerente de la bodega debe elegir mantener una producción artesanal y limitada ($d_1$).
+
+2.  El criterio optimista en situación favorable recomienda la capacidad media ($d_2$) porque ofrece la mayor rentabilidad potencial ante la demanda alta de vino de Jerez.
+
+3. Aplicando el criterio de Laplace para costes, la alternativa seleccionada es la producción artesanal ($d_1$) con un valor medio menor de 21,33
+
+4.  El criterio de Savage y el de Laplace favorables coinciden en recomendar la misma alternativa ($d_2$, capacidad media).
+
+5. En el criterio de Hurwicz para costes con $\alpha$ = 0,5, la opción menos ventajosa para la bodega es la capacidad media ($d_2$).
